@@ -4,7 +4,7 @@ project(enginehost_wolf C)
 # The Wolf core (WolfPlugin.java, wolf_enginehost.c): one library, libwolfrpg.so, with the core
 # linked in statically, no C++ runtime and no SDL. With a display it draws with GLES 2 and plays
 # through AAudio (Enginehost's runtime process, allocate-then-clamp); isolated, it draws in software
-# into the host's frames and fills the host's audio ring (Droidtop/tracker#858, 6691411927). Images
+# into the host's frames and fills the host's audio ring (mytop-project/tracker#858, 6691411927). Images
 # are decoded with stb_image, from the vendor/stb submodule (nothings/stb, pinned by its gitlink).
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 

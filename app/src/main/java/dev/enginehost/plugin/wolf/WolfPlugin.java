@@ -17,7 +17,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
- * The WOLF RPG Editor core (Droidtop/tracker#858). The game folder is read through Enginehost's
+ * The WOLF RPG Editor core (mytop-project/tracker#858). The game folder is read through Enginehost's
  * file layer (Enginehost's plugin-native/), so the core opens exactly what the host hands it.
  *
  * <p>Two ways to run (comment 6691411927):

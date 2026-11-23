@@ -1,7 +1,7 @@
 /*
  * The GLES 2 renderer: draws the core's picture quads (vm.h, wolf_quad) on the GL thread of the
  * GLSurfaceView WolfPlugin attaches to Enginehost's display. Runs under allocate-then-clamp now
- * and through the Fibrewall GPU proxy later (Droidtop/tracker#858, #815). Every call here must be
+ * and through the Fibrewall GPU proxy later (mytop-project/tracker#858, #815). Every call here must be
  * made on that GL thread, with its context current.
  */
 #ifndef ENGINEHOST_WOLF_GL_H

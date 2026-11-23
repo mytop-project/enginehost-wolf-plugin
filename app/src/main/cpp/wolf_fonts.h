@@ -1,6 +1,6 @@
 /*
  * The font source the core's text layout asks for glyphs (vm.h, wolf_render_source.glyph).
- * Fonts are pluggable (Droidtop/tracker#815), in this order:
+ * Fonts are pluggable (mytop-project/tracker#815), in this order:
  *   1. the game's own: the .ttf, .otf and .ttc files beside Game.exe and in Data/, matched to
  *      Game.dat's font names (texts 3-6) by their name tables; a character the named font lacks
  *      comes from the game's other fonts;

@@ -102,7 +102,7 @@ wolf_fonts *wolf_fonts_open(const char *folder, const wolf_game *g, wolf_vm *vm)
     }
     if (vm && !f->nfaces)
         wolf_vm_log(vm, WOLF_LOG_WARN, "the game ships no font files; text is not drawn until Enginehost provides "
-                    "a default font set (Droidtop/tracker#815)");
+                    "a default font set (mytop-project/tracker#815)");
     return f;
 }
 

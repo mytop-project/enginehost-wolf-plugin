@@ -51,7 +51,7 @@ jobs:
         with:
           persist-credentials: false
           # The vendored libraries under app/src/main/cpp/vendor are submodules, pinned by their
-          # gitlinks (Droidtop/tracker#921).
+          # gitlinks (mytop-project/tracker#921).
           submodules: true
       - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
         with:
@@ -70,8 +70,8 @@ jobs:
           gradle-version: "8.13"
       # The plugin API this core compiles against, and plugin-native (the file layer and the audio
       # ring) it builds into its library: Enginehost's own, at the commit pinned here, into
-      # build/enginehost. No copies are committed here (Droidtop/tracker#921 item 17).
-      - uses: Droidtop/enginehost/.github/actions/plugin-api@c9c543afe7fa7c4e5250d79c250c63a3a7ad31bc
+      # build/enginehost. No copies are committed here (mytop-project/tracker#921 item 17).
+      - uses: mytop-project/enginehost/.github/actions/plugin-api@c9c543afe7fa7c4e5250d79c250c63a3a7ad31bc
       - name: Build the wrapper library
         run: gradle :app:assembleRelease --no-daemon --stacktrace
       - name: Pack the bundle inputs
@@ -122,7 +122,7 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/plugin/')
     permissions:
       contents: read
-    uses: Droidtop/enginehost/.github/workflows/sign-engine-bundle.yml@bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
+    uses: mytop-project/enginehost/.github/workflows/sign-engine-bundle.yml@bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
     with:
       tooling-sha: bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
       unsigned-artifact: enginehost-wolf-debug-apk-unsigned
@@ -136,12 +136,12 @@ jobs:
     # means used with real games on hardware; testing means it runs games
     # but has not been lived with. Enginehost offers each person the channel
     # they chose in Settings and every steadier one. The release logic lives
-    # once, in Droidtop/enginehost (Droidtop/tracker#196).
+    # once, in mytop-project/enginehost (mytop-project/tracker#196).
     needs: sign
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.publish && startsWith(github.ref, 'refs/heads/plugin/') }}
     permissions:
       contents: write
-    uses: Droidtop/enginehost/.github/workflows/publish-engine-bundle.yml@bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
+    uses: mytop-project/enginehost/.github/workflows/publish-engine-bundle.yml@bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
     with:
       tooling-sha: bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
       artifact-name: enginehost-wolf-debug-apk
@@ -160,7 +160,7 @@ jobs:
     if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/plugin/') }}
     permissions:
       contents: write
-    uses: Droidtop/enginehost/.github/workflows/publish-engine-bundle.yml@bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
+    uses: mytop-project/enginehost/.github/workflows/publish-engine-bundle.yml@bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
     with:
       tooling-sha: bed4f8c3a300c5f8bc55dd4bd184e38ab9c7beda
       artifact-name: enginehost-wolf-debug-apk

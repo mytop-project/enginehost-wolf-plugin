@@ -1,6 +1,6 @@
 /*
  * Sound files to PCM for the core's mixer. All audio and video decoding belongs to Enginehost's
- * sandboxed FFmpeg decode service (the owner, Droidtop/tracker#906 and #858: "All video and audio
+ * sandboxed FFmpeg decode service (the owner, mytop-project/tracker#906 and #858: "All video and audio
  * decoding should be handled by the ffmpeg bundle"). Until its API exists the core decodes
  * nothing itself: every request answers WOLF_DECODE_WAITING, and the game runs silent.
  */

@@ -1,5 +1,5 @@
 /*
- * WolfPlugin's natives. Two ways to run (Droidtop/tracker#858, comment 6691411927):
+ * WolfPlugin's natives. Two ways to run (mytop-project/tracker#858, comment 6691411927):
  * - with a display (Enginehost's runtime process, allocate-then-clamp): GLES on the GL thread of
  *   WolfPlugin's GLSurfaceView (nativeGl*), sound through AAudio;
  * - isolated, step-driven, the fallback: software drawing into nativeStep's pixels, sound into
